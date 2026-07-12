@@ -10,6 +10,8 @@
   --gold-metallic: #D4A437;
   --gold-light: #F2D17A;
   --gold-dark: #B38624;
+  --ref-gold-dark: #B38624;
+  --ref-gold-metallic: #D4A437;
   --white-glass: rgba(255, 255, 255, 0.65);
   
   --hero-bg: linear-gradient(135deg, #E6EFEA 0%, #FAF8F5 70%);
