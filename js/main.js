@@ -157,10 +157,16 @@ function initScrollTop() {
     });
     
     scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      if (window.innerWidth < 992) {
+        // On mobile, scroll instantly to prevent rendering lag and page freezing
+        window.scrollTo(0, 0);
+      } else {
+        // On desktop, use smooth scrolling
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
     });
   }
 }

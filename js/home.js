@@ -148,19 +148,18 @@ function initSessionsAccordion() {
         } else {
           setActivePanel(idx);
           
-          // Scroll the top of the clicked panel to the top of the viewport (below the navbar)
-          setTimeout(() => {
-            const rect = panel.getBoundingClientRect();
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const navbar = document.querySelector('.navbar');
-            const navbarHeight = navbar ? navbar.offsetHeight : 70;
-            const targetY = rect.top + scrollTop - navbarHeight - 10;
-            
-            window.scrollTo({
-              top: targetY,
-              behavior: 'smooth'
-            });
-          }, 100);
+          // Calculate target Y instantly using the container offset and collapsed card heights
+          const container = document.querySelector('.accordion-slider-container');
+          const containerTop = container.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+          const navbar = document.querySelector('.navbar');
+          const navbarHeight = navbar ? navbar.offsetHeight : 70;
+          // Collapsed height is exactly 80px on mobile
+          const targetY = containerTop + (idx * 80) - navbarHeight - 15;
+          
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
         }
       } else {
         setActivePanel(idx);
@@ -792,6 +791,7 @@ function initAsciiTreeCanvasV2() {
 
 /* Stacking Cards Scroll Physics Animation (TND Custom Formula) */
 function initStackingCards() {
+  if (window.innerWidth < 992) return;
   const cards = document.querySelectorAll('.stacking-role-section .stack-card');
   if (!cards.length) return;
 
@@ -828,6 +828,7 @@ function initStackingCards() {
 
 /* Civic Stacking Cards Scroll Physics Animation */
 function initCivicStackingCards() {
+  if (window.innerWidth < 992) return;
   const wrappers = document.querySelectorAll('.civic-info-column .civic-card-wrapper');
   if (!wrappers.length) return;
 
