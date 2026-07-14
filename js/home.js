@@ -147,6 +147,20 @@ function initSessionsAccordion() {
           activeIndex = -1;
         } else {
           setActivePanel(idx);
+          
+          // Scroll the top of the clicked panel to the top of the viewport (below the navbar)
+          setTimeout(() => {
+            const rect = panel.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 70;
+            const targetY = rect.top + scrollTop - navbarHeight - 10;
+            
+            window.scrollTo({
+              top: targetY,
+              behavior: 'smooth'
+            });
+          }, 100);
         }
       } else {
         setActivePanel(idx);
