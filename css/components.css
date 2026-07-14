@@ -79,6 +79,8 @@
 .nav-logo-container span {
   font-family: 'Empirez-Regular', 'Empirez', Georgia, serif !important;
   font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
 }
 
 .logo-circle {
