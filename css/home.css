@@ -238,29 +238,20 @@ body {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.9s var(--ease) 0.18s, transform 0.9s var(--ease) 0.18s;
-  
-  /* Continuous brand text gradient (Deep Green to Gold) using background-image to avoid resetting clip properties */
-  background-image: linear-gradient(90deg, #0F3A34 0%, #C89B3C 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-dark);
   display: inline-block;
 }
 .h1-main.show { opacity: 1; transform: translateY(0); }
 
-/* Ensure inner spans inherit the parent background gradient correctly */
+/* Ensure inner spans inherit the parent color correctly */
 .h1-main .text-navy,
 .h1-main .text-gold {
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  background: inherit;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: inherit;
 }
 
-/* Dark mode adjustment for high contrast: Mint Green to Bright Gold gradient */
+/* Dark mode adjustment for high contrast: Solid white/off-white */
 .dark-theme .h1-main {
-  background-image: linear-gradient(90deg, #1db87a 0%, #ffe066 100%);
+  color: var(--primary-dark);
 }
 
 .hero-body {
@@ -427,10 +418,16 @@ body {
   height: 130%;
   top: -15%;
   left: -15%;
-  background: radial-gradient(circle, rgba(212, 164, 55, 0.45) 0%, rgba(212, 164, 55, 0.18) 45%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 168, 181, 0.35) 0%, rgba(0, 168, 181, 0.12) 45%, rgba(0, 0, 0, 0) 70%);
   filter: blur(55px);
   z-index: 0;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.video-showcase-container:hover .video-ambient-glow {
+  opacity: 1;
 }
 
 /* Cinematic Video Frame (Browser Window Style) */
@@ -440,12 +437,18 @@ body {
   background: #0D0D0D; /* Rich Black */
   border-radius: 14px;
   border: 1.5px solid #C89B3C; /* Thin luxury gold border */
-  box-shadow: 0 45px 95px rgba(0, 0, 0, 0.65), 0 0 55px rgba(212, 164, 55, 0.32);
+  box-shadow: 0 45px 95px rgba(0, 0, 0, 0.65);
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.video-showcase-container:hover .cinematic-video-frame {
+  border-color: rgba(0, 168, 181, 0.35);
+  box-shadow: 0 45px 95px rgba(0, 0, 0, 0.65), 0 0 35px rgba(0, 168, 181, 0.25);
 }
 
 /* Browser Header Bar styling */
@@ -1953,8 +1956,8 @@ body {
 
 .campaign-card:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 164, 55, 0.4);
-  border-color: rgba(212, 164, 55, 0.45);
+  border-color: rgba(0, 168, 181, 0.35);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 15px 40px rgba(0, 168, 181, 0.08), 0 0 35px rgba(0, 168, 181, 0.25);
 }
 
 .campaign-card::after {

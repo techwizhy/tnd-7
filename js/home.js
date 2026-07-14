@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStatCounters();
     initSessionsAccordion();
     initFounder3dCardTilt();
+    initFooter3dCardTilt();
     initAsciiTreeCanvas();
     initAsciiTreeCanvasV2();
     initStackingCards();
@@ -88,6 +89,12 @@ function initSessionsAccordion() {
   let activeIndex = Array.from(accordionPanels).findIndex(panel => panel.classList.contains('active'));
   if (activeIndex === -1) activeIndex = 0; // Default to Session 1
 
+  // Mobile check: start with all closed
+  if (window.innerWidth < 992) {
+    accordionPanels.forEach(panel => panel.classList.remove('active'));
+    activeIndex = -1;
+  }
+
   let autoplayTimer = null;
   const autoplayDelay = 5000; // 5 seconds interval
 
@@ -103,6 +110,7 @@ function initSessionsAccordion() {
   };
 
   const startAutoplay = () => {
+    if (window.innerWidth < 992) return; // Do not autoplay on mobile
     stopAutoplay();
     autoplayTimer = setInterval(() => {
       let nextIndex = activeIndex + 1;
@@ -122,7 +130,7 @@ function initSessionsAccordion() {
 
   // Panel hover/click logic
   accordionPanels.forEach((panel, idx) => {
-    // Hover to expand on desktop, click/tap on mobile/desktop
+    // Hover to expand on desktop
     panel.addEventListener('mouseenter', () => {
       stopAutoplay();
       if (window.innerWidth >= 992) {
@@ -132,8 +140,18 @@ function initSessionsAccordion() {
 
     panel.addEventListener('click', () => {
       stopAutoplay();
-      setActivePanel(idx);
-      startAutoplay(); // Reset timer and resume
+      if (window.innerWidth < 992) {
+        // Toggle behavior on mobile: close if already open, open and close others if closed
+        if (panel.classList.contains('active')) {
+          panel.classList.remove('active');
+          activeIndex = -1;
+        } else {
+          setActivePanel(idx);
+        }
+      } else {
+        setActivePanel(idx);
+        startAutoplay(); // Reset timer and resume
+      }
     });
   });
 
@@ -203,6 +221,43 @@ function initFounder3dCardTilt() {
       card.style.boxShadow = `0 20px 45px ${idleShadow}`;
       card.style.borderColor = 'rgba(255, 255, 255, 0.7)';
       card.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.8s ease';
+    });
+  });
+}
+
+/* 3D Footer Cards Rubber Tilt Effect */
+function initFooter3dCardTilt() {
+  const cards = document.querySelectorAll('.footer-journey-box, .footer-contact-box, .footer-flag-card-inner');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const px = (x / rect.width) - 0.5;
+      const py = (y / rect.height) - 0.5;
+      
+      // Much larger tilt and translate coefficients for a highly flexible rubber feel
+      const rotateY = px * 38;
+      const rotateX = -py * 38;
+      const translateX = px * 25;
+      const translateY = py * 25;
+      
+      const isDark = document.documentElement.classList.contains('dark-theme');
+      const activeShadow = isDark ? 'rgba(0, 0, 0, 0.45)' : 'rgba(15, 58, 52, 0.16)';
+      
+      card.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) translate(${translateX}px, ${translateY}px) scale(1.05)`;
+      card.style.boxShadow = `0 35px 75px ${activeShadow}, 0 0 45px rgba(212, 175, 55, 0.35)`;
+      card.style.borderColor = `rgba(212, 175, 55, 0.65)`;
+      card.style.transition = 'transform 0.08s ease-out, box-shadow 0.08s ease-out, border-color 0.2s ease';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      // Revert styles to trigger clean fallback to CSS idle styles
+      card.style.transform = '';
+      card.style.boxShadow = '';
+      card.style.borderColor = '';
+      card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s ease';
     });
   });
 }

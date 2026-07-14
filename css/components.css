@@ -175,7 +175,7 @@
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1.1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 60px;
   align-items: center;
   position: relative;
@@ -188,7 +188,7 @@
 .footer-col-journey {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .footer-journey-box {
@@ -196,7 +196,7 @@
   border-radius: 16px;
   overflow: hidden;
   border: 2px solid rgba(212, 175, 55, 0.35);
-  background-image: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%), linear-gradient(135deg, rgba(38,122,108,0.22) 0%, rgba(30,117,101,0.22) 100%), url('../images/india_democracy_panoramic_banner.webp');
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%), linear-gradient(135deg, rgba(38,122,108,0.22) 0%, rgba(30,117,101,0.22) 100%);
   background-size: cover;
   background-position: center;
   box-shadow:
@@ -226,11 +226,41 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+/* Ashoka Chakra Watermark */
+.chakra-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  opacity: 0.08;
+  color: var(--gold-light);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.chakra-watermark svg {
+  width: 100%;
+  height: 100%;
+  animation: spin-clockwise 25s linear infinite;
+  display: block;
+}
+
+@keyframes spin-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Footer Flag Image Card */
 .footer-flag-card {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .footer-flag-card-inner {
@@ -246,6 +276,7 @@
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
   max-width: 420px;
   width: 100%;
+  aspect-ratio: 4 / 3;
 }
 
 .footer-flag-card-inner:hover {
@@ -261,7 +292,7 @@
 .footer-flag-img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   border-radius: 14px;
 }
@@ -306,6 +337,45 @@
   z-index: 1;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 50px;
+}
+
+.footer-col-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-contact-box {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(212, 175, 55, 0.35);
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%), linear-gradient(135deg, rgba(38,122,108,0.22) 0%, rgba(30,117,101,0.22) 100%);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  max-width: 420px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer-contact-box:hover {
+  transform: perspective(800px) rotateY(0deg) rotateX(2deg) translateY(-6px);
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(212, 175, 55, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .footer-col-contact h3 {
