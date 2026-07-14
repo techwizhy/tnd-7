@@ -177,8 +177,8 @@
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -343,8 +343,9 @@
 
 .footer-col-contact {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .footer-contact-box {
@@ -924,5 +925,10 @@
   .footer-top-banner .btn-pill-gold {
     width: 100%;
     max-width: 280px;
+  }
+  
+  .footer-main-columns {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }
