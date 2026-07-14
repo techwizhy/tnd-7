@@ -49,6 +49,7 @@
       <li><a href="home.html" class="nav-link active">Home</a></li>
       <li><a href="#about" class="nav-link">About Us</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li class="mobile-only"><a href="#programme" class="nav-link nav-btn-mobile">Register Now <i class="fa-solid fa-arrow-right"></i></a></li>
     </ul>
 
     <div class="nav-actions">
@@ -59,13 +60,20 @@
         <i class="fa-solid fa-moon theme-toggle-icon"></i>
       </button>
     </div>
-  </nav>
 
-  <!-- ░░ BACKGROUND: WebGL Cosmic Vortex ░░ -->
-  <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
 
   <!-- Hero Section -->
   <header class="hero" id="hero">
+    
+    <!-- Indian Parliament Watermark Background Layer -->
+    <div class="hero-parliament-bg"></div>
+
     <!-- MAIN HERO GRID -->
     <div class="hero-layout">
 
@@ -73,90 +81,98 @@
       <div class="hero-text" id="heroText">
         <!-- HEADING -->
         <h1 class="hero-h1" id="heroH1">
-          <!-- Line 1: small, italic -->
-          <span class="h1-pre" id="h1Pre">Why India needs</span>
-          <!-- Line 2: THE main title — ONE LINE, shimmer -->
-          <span class="h1-main" id="h1Main">The New Democracy?</span>
+          <span class="h1-pre show" id="h1Pre">Why India Needs <span class="title-line-decor"></span></span>
+          <span class="h1-main show" id="h1Main">
+            <span class="text-navy">The New</span> <span class="text-gold">Democracy?</span>
+          </span>
         </h1>
 
         <!-- BODY — Typewriter paragraphs -->
         <div class="hero-body" id="heroBody">
-          <p class="tw-para" data-tw="0">
-            The New Democracy (TND) is founded on a simple belief: politics should be driven by <strong>knowledge, ethics, integrity, and competence</strong> — not money, muscle, legacy, or corruption.
+          <p class="tw-para show" data-tw="0">
+            The New Democracy (TND) is founded on a simple belief: politics should be driven by <strong>Knowledge, Ethics, Integrity, and Competence</strong> — not Money, Muscle, Family Legacy, or Corruption.
           </p>
-          <p class="tw-para" data-tw="1">
-            As India's first Political Literacy Initiative, TND equips aspiring political leaders with the knowledge, skills, and practical insights needed for public life. We bridge the gap between political passion and leadership preparedness, empowering a new generation to earn its place through merit, not privilege.
+          <p class="tw-para show" data-tw="1">
+            As India's first Political Literacy Initiative, TND equips aspiring political leaders with holistic training and practical skills needed for public life. We bridge the gap between political passion and leadership preparedness, empowering a new generation to earn its place through merit, not privilege.
           </p>
-          <p class="tw-tagline slide-up-para" id="heroTagline">
+          
+          <!-- Gold Separator line above quote -->
+          <div class="quote-separator show">
+            <span class="sep-line"></span>
+            <span class="sep-diamond">✦</span>
+            <span class="sep-line"></span>
+          </div>
+
+          <p class="hero-manifesto-quote show" id="heroTagline">
             Because India's future deserves leaders who are informed, capable, and ready to lead.
           </p>
         </div>
 
         <!-- CTAs -->
-        <div class="hero-btns" id="heroBtns">
-          <a href="#programme" class="btn-pill btn-pill-gold" id="ctaRegister">
+        <div class="hero-btn-wrap show" id="heroBtns">
+          <div class="btn-glow"></div>
+          <a href="#programme" class="btn-pill-gold" id="ctaRegister">
             REGISTER NOW <i class="fa-solid fa-arrow-right"></i>
           </a>
-          <button class="btn-intro" id="ctaWatch">
-            <span class="play-circle"><i class="fa-solid fa-play"></i></span>
-            <span>WATCH INTRO</span>
-          </button>
         </div>
 
       </div>
 
-      <!-- ── RIGHT: 3D Rotating Card ── -->
+      <!-- ── RIGHT: Cinematic Video Showcase ── -->
       <div class="hero-visual" id="heroVisual">
-
-        <!-- Scene container with perspective -->
-        <div class="flip-scene">
-
-          <!-- 3D rotating card -->
-          <div class="flip-card" id="flipCard">
-
-            <!-- FRONT FACE: Image -->
-            <div class="flip-face flip-front">
-              <div class="back-img" id="frontImg"></div>
+        <div class="video-showcase-container">
+          
+          <!-- Golden Light Glow behind Video Showcase -->
+          <div class="video-ambient-glow"></div>
+          
+          <!-- Cinematic Frame (OS/Browser Window Style) -->
+          <div class="cinematic-video-frame" id="flipCard">
+            <!-- Browser style Title Bar -->
+            <div class="video-window-header">
+              <div class="window-dot-group">
+                <span class="window-dot dot-red"></span>
+                <span class="window-dot dot-yellow"></span>
+                <span class="window-dot dot-green"></span>
+              </div>
+              <div class="window-title">TND Introduction</div>
+              <div class="window-header-spacer"></div>
             </div>
 
-            <!-- BACK FACE: Video -->
-            <div class="flip-face flip-back">
-              <video id="heroVideo" autoplay loop muted playsinline>
+            <!-- Video Wrapper to constrain layout -->
+            <div class="video-wrapper">
+              <video id="heroVideo" autoplay loop muted playsinline poster="refer/hero_section_image.png">
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-parliament-building-in-aerial-view-12095-large.mp4" type="video/mp4">
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-network-connection-lines-and-dots-background-40546-large.mp4" type="video/mp4">
               </video>
-              <div class="face-hud">
-                <span class="hud-live"><span class="live-dot" aria-hidden="true"></span>LIVE — TND</span>
-                <div class="hud-play-wrap" id="hudPlayWrap">
-                  <button class="hud-play" id="hudPlayBtn" aria-label="Watch Introduction Video">
-                    <i class="fa-solid fa-play" aria-hidden="true"></i>
-                  </button>
-                  <p>PLAY INTRO</p>
-                </div>
-                <span class="hud-title">Public Leadership Journal</span>
+              
+              <!-- Dark gradient overlay inside video frame for better label contrast -->
+              <div class="video-overlay"></div>
+              
+              <!-- Cinematic Play Button (Element 2) -->
+              <button class="cinematic-play-btn" id="hudPlayBtn" aria-label="Play Introduction Video">
+                <span class="play-ring"></span>
+                <i class="fa-solid fa-play"></i>
+              </button>
+
+              <!-- LIVE Badge inside video frame -->
+              <div class="cinematic-live-badge">
+                <span class="live-dot"></span>
+                <span>LIVE — TND</span>
               </div>
+
             </div>
+          </div>
 
-          </div><!-- /flip-card -->
-
-          <!-- Rotating ring decoration (4 rings) -->
-          <div class="flip-ring ring-1" aria-hidden="true"></div>
-          <div class="flip-ring ring-2" aria-hidden="true"></div>
-          <div class="flip-ring ring-3" aria-hidden="true"></div>
-          <div class="flip-ring ring-4" aria-hidden="true"></div>
-
-        </div><!-- /flip-scene -->
-
+        </div>
       </div><!-- /hero-visual -->
 
     </div><!-- /hero-layout -->
 
-
-
-    <!-- Organic divider transition -->
+    <!-- Organic divider transition (Layered Asymmetric Contour with Shadow) -->
     <div class="hero-divider">
-      <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
-        <path d="M0,60 C240,140 480,10 720,80 C960,150 1200,60 1440,100 L1440,160 L0,160 Z"></path>
+      <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <path d="M0,90 C360,195 720,35 1080,165 L1440,85 L1440,200 L0,200 Z" fill="rgba(11, 31, 58, 0.04)" style="transform: translateY(-4px);"></path>
+        <path d="M0,90 C360,190 720,30 1080,160 L1440,80 L1440,200 L0,200 Z" fill="var(--bg-cream)"></path>
       </svg>
     </div>
   </header>

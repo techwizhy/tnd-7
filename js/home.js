@@ -1088,7 +1088,14 @@ function initHeroMotionsites() {
   }, 680);
 
   setTimeout(() => {
-    startTypewriter();
+    const twParas = document.querySelectorAll('.tw-para');
+    twParas.forEach((p, idx) => {
+      setTimeout(() => {
+        p.classList.add('show');
+      }, idx * 180);
+    });
+    const tagline = document.getElementById('heroTagline');
+    tagline && tagline.classList.add('show');
   }, 900);
 
   setTimeout(() => {

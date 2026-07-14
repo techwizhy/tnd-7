@@ -612,3 +612,147 @@
   z-index: 2;
   opacity: 0.85;
 }
+
+/* Mobile-only menu link list item styling */
+.mobile-only {
+  display: none !important;
+}
+
+/* Default Menu Toggle Button Styling (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1005;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-dark);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.dark-theme .menu-toggle .bar {
+  background-color: var(--gold-light);
+}
+
+/* Responsiveness overrides for shared components (Navbar, Footer) */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--nav-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 2rem;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  /* Mobile Menu Hamburger Animation active states */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .navbar {
+    padding: 0 1.5rem;
+    height: 75px;
+  }
+  
+  .navbar.scrolled {
+    height: 75px;
+  }
+  
+  .logo-circle {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .nav-logo-container span {
+    font-size: 0.95rem;
+  }
+  
+  /* Hide the desktop register button on mobile navbar */
+  .nav-actions .nav-btn {
+    display: none !important;
+  }
+  
+  .nav-actions {
+    gap: 15px;
+  }
+  
+  /* Style for mobile-only register button in slide-out menu */
+  .nav-btn-mobile {
+    background: var(--primary-dark) !important;
+    color: var(--bg-cream) !important;
+    border: 1.5px solid var(--primary-dark) !important;
+    border-radius: 40px !important;
+    padding: 12px 28px !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-align: center !important;
+    box-shadow: 0 6px 15px rgba(15, 58, 52, 0.2);
+    margin-top: 10px;
+  }
+  
+  .dark-theme .nav-btn-mobile {
+    background: var(--gold-metallic) !important;
+    color: var(--primary-deep) !important;
+    border-color: var(--gold-metallic) !important;
+  }
+
+  /* Footer Top Banner Mobile Responsiveness */
+  .footer-top-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-top-banner-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .footer-top-banner .btn-pill-gold {
+    width: 100%;
+    max-width: 280px;
+  }
+}
