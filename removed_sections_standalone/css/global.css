@@ -1,0 +1,295 @@
+/* Redesigned Stylesheet matching home_page.png visual layout */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+  /* Theme Color Palette */
+  --bg-cream: #FAF8F5;
+  --bg-warm-ivory: #F9F7F2;
+  --primary-dark: #0F3A34;
+  --primary-dark-glow: #143F38;
+  --gold-metallic: #D4A437;
+  --gold-light: #F2D17A;
+  --gold-dark: #B38624;
+  --ref-gold-dark: #B38624;
+  --ref-gold-metallic: #D4A437;
+  --white-glass: rgba(255, 255, 255, 0.65);
+  
+  --hero-bg: linear-gradient(135deg, #E6EFEA 0%, #FAF8F5 70%);
+  --founders-bg: #FAF9F6;
+  --nav-bg: rgba(250, 248, 245, 0.8);
+  --border-color: rgba(15, 58, 52, 0.05);
+  --card-border: rgba(255, 255, 255, 0.7);
+  --testimonial-bg: rgba(255, 255, 255, 0.98);
+  --testimonial-border: rgba(15, 58, 52, 0.18);
+  --shadow-sm: 0 10px 30px rgba(15, 58, 52, 0.09);
+  --grid-dot-color: rgba(15, 58, 52, 0.12);
+  --text-muted: rgba(15, 58, 52, 0.6);
+  --text-normal: rgba(15, 58, 52, 0.85);
+
+  /* Fonts */
+  --font-sans: 'Fraunces', Georgia, serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'Fraunces', Georgia, serif;
+}
+
+.dark-theme {
+  /* Dark Theme variables - matched with register.html */
+  --bg-cream: #040d0e;
+  --bg-warm-ivory: #051c1c;
+  --primary-dark: #FFFFFF;
+  --primary-dark-glow: #092225;
+  --gold-metallic: #D4AF37;
+  --gold-light: #F2C94C;
+  --gold-dark: #AA8524;
+  --white-glass: rgba(5, 28, 28, 0.7);
+  
+  --hero-bg: linear-gradient(135deg, #092225 0%, #040d0e 70%);
+  --founders-bg: #051c1c;
+  --nav-bg: rgba(0, 0, 0, 0.85);
+  --border-color: rgba(0, 168, 181, 0.25);
+  --card-border: rgba(0, 168, 181, 0.25);
+  --testimonial-bg: rgba(5, 28, 28, 0.98);
+  --testimonial-border: rgba(0, 168, 181, 0.25);
+  --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --grid-dot-color: rgba(0, 168, 181, 0.15);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-normal: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark Theme overrides for elements to ensure perfect visibility and contrast */
+.dark-theme .nav-arrow {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--primary-dark);
+}
+.dark-theme .nav-arrow:hover {
+  background: var(--primary-dark);
+  color: var(--bg-cream);
+}
+.dark-theme .play-circle {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary-dark);
+}
+.dark-theme .founder-avatar {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+.dark-theme .stat-capsule:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 164, 55, 0.4);
+}
+.dark-theme .glow-1 {
+  background: radial-gradient(circle, rgba(0, 168, 181, 0.28) 0%, rgba(0, 0, 0, 0) 70%) !important;
+}
+.dark-theme .glow-2 {
+  background: radial-gradient(circle, rgba(0, 168, 181, 0.28) 0%, rgba(0, 0, 0, 0) 70%) !important;
+}
+.dark-theme .sessions-slider-wrapper .hero-cyan-glow {
+  background: radial-gradient(circle, rgba(0, 168, 181, 0.6) 0%, rgba(0, 0, 0, 0) 70%) !important;
+}
+
+/* Navbar Actions Wrapper */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 58, 52, 0.15);
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 10px rgba(15, 58, 52, 0.05);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.08);
+  border-color: var(--gold-metallic);
+  color: var(--gold-metallic);
+  box-shadow: 0 6px 15px rgba(212, 164, 55, 0.15);
+}
+
+.dark-theme .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--primary-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.dark-theme .theme-toggle-btn:hover {
+  border-color: var(--gold-metallic);
+  color: var(--gold-light);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--bg-cream);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--primary-dark);
+  background-color: var(--bg-cream);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: -0.01em;
+}
+
+.section-title-large {
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 992px) {
+  .section-title-large {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title-large {
+    font-size: 1.8rem;
+  }
+}
+
+p {
+  color: var(--primary-dark);
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+/* Premium Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-warm-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-metallic);
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: var(--white-glass);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 20px;
+}
+
+.gold-border-panel {
+  border: 1px solid rgba(212, 164, 55, 0.35);
+  box-shadow: 0 15px 40px rgba(212, 164, 55, 0.08);
+}
+
+
+/* Custom Cursor */
+.custom-cursor {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--gold-metallic);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transition: width 0.25s cubic-bezier(0.215, 0.61, 0.355, 1), 
+                height 0.25s cubic-bezier(0.215, 0.61, 0.355, 1), 
+                background-color 0.25s ease, 
+                border-color 0.25s ease;
+    display: none; /* Controlled by JS */
+}
+
+.custom-cursor-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: screen;
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    display: none; /* Controlled by JS */
+}
+
+.custom-cursor.cursor-hover {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(212, 175, 55, 0.12);
+    border-color: var(--gold-light);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.custom-cursor-dot.cursor-hover {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold-light);
+}
+
+@media (pointer: coarse) {
+    .custom-cursor,
+    .custom-cursor-dot {
+        display: none !important;
+    }
+}
+
+/* Custom Cursor in Light Theme (since default in home.css is light theme, we override in .dark-theme and keep base for light) */
+.custom-cursor {
+    border-color: var(--gold-metallic);
+}
+.custom-cursor.cursor-hover {
+    background-color: rgba(212, 175, 55, 0.05) !important;
+    border-color: var(--gold-metallic) !important;
+    box-shadow: 0 1px 5px rgba(212, 175, 55, 0.1) !important;
+}
+.custom-cursor-dot {
+    background-color: var(--primary-dark) !important;
+}
+.custom-cursor-dot.cursor-hover {
+    background-color: var(--gold-metallic) !important;
+}
+
+/* When dark theme is active, revert mix-blend-mode to screen and white dot */
+.dark-theme .custom-cursor-dot {
+    background-color: #FFFFFF !important;
+}
+.dark-theme .custom-cursor {
+    border-color: var(--gold-light) !important;
+}
+
+
+
+

@@ -1,0 +1,274 @@
+/* =============================================================
+   1. Footer Enrollment Form (Rounded 12px Inputs)
+============================================================= */
+.footer-col-news .enrollment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.footer-col-news .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.footer-col-news .form-group label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+}
+
+.footer-col-news .form-group input,
+.footer-col-news .form-group select,
+.footer-col-news .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.footer-col-news .form-group textarea {
+  resize: vertical;
+}
+
+.footer-col-news .form-group input:focus,
+.footer-col-news .form-group select:focus,
+.footer-col-news .form-group textarea:focus {
+  border-color: var(--gold-metallic);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer-col-news .form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23d4a574' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+}
+
+.footer-col-news .form-group select option {
+  color: var(--primary-dark);
+  background-color: var(--bg-cream);
+}
+
+.footer-col-news .submit-button {
+  background: var(--gold-dark);
+  color: var(--bg-cream);
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+  box-shadow: 0 4px 15px rgba(212, 164, 55, 0.15);
+}
+
+.footer-col-news .submit-button:hover {
+  background: var(--gold-metallic);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 164, 55, 0.35);
+}
+
+.footer-col-news .form-feedback-alert {
+  display: none;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(212, 164, 55, 0.1);
+  border: 1px solid var(--gold-metallic);
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/* =============================================================
+   2. Main Registration Form (Teal 4px Inputs)
+============================================================= */
+/* Teal variables for form card copied from register.css */
+:root {
+  --teal-bg: rgba(9, 34, 37, 0.75);
+  --teal-border: rgba(0, 168, 181, 0.25);
+  --teal-glow: rgba(0, 200, 220, 0.2);
+  --gold-primary: #D4AF37;
+}
+
+/* Form Card Styles copied from register.css */
+.registration-form-card {
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E"), rgba(5, 28, 28, 0.70);
+    border: 1px solid var(--teal-border);
+    border-radius: 16px;
+    padding: 2.2rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden; /* Prevent glint spill */
+}
+
+.registration-form-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.05) 30%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.05) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: none;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.registration-form-card:hover::after {
+    animation: glint-sweep 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.registration-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0,200,220,0) 0%, rgba(0,200,220,1) 50%, rgba(0,200,220,0) 100%);
+    box-shadow: 0 0 10px rgba(0,200,220,0.8);
+}
+
+.registration-form-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 
+                0 0 35px rgba(0, 200, 220, 0.4), 
+                inset 0 0 20px rgba(0, 168, 181, 0.2);
+}
+
+.form-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.registration-section .enrollment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.registration-section .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.registration-section .form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.6);
+    transition: var(--transition);
+}
+
+.registration-section .form-group:focus-within label {
+    color: var(--gold-primary);
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.registration-section .form-group input,
+.registration-section .form-group select,
+.registration-section .form-group textarea {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    background: rgba(3, 15, 16, 0.92);
+    border: 1px solid rgba(0, 168, 181, 0.25);
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.registration-section .form-group textarea {
+    resize: vertical;
+}
+
+.registration-section .form-group input:focus,
+.registration-section .form-group select:focus,
+.registration-section .form-group textarea:focus {
+    outline: none;
+    border-color: rgba(0, 200, 220, 0.6);
+    box-shadow: 0 0 10px rgba(0, 200, 220, 0.3);
+}
+
+.registration-section .form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.1rem center;
+    background-size: 1rem;
+}
+
+.registration-section .submit-button {
+    background: var(--gold-gradient);
+    color: #000000;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 0.3rem;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+    min-height: 45px;
+}
+
+.registration-section .submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+}
+
+.registration-section .form-feedback-alert {
+    display: none;
+    padding: 0.85rem;
+    border-radius: 4px;
+    background: rgba(0, 168, 181, 0.2);
+    border: 1px solid var(--gold-primary);
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 0.85rem;
+    animation: slideUp 0.4s ease forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
