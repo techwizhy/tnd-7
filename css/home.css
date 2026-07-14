@@ -1481,10 +1481,6 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
-  
-  .footer-col-links {
-    grid-column: span 2;
-  }
 }
 
 @media (max-width: 991px) {
@@ -1578,9 +1574,12 @@ body {
     grid-template-columns: 1fr;
   }
   
-  .footer-col-links {
-    grid-column: span 1;
-    grid-template-columns: 1fr;
+  .footer-flag-card {
+    justify-content: center;
+  }
+  
+  .footer-flag-card-inner {
+    max-width: 360px;
   }
   
   
@@ -2430,7 +2429,7 @@ body {
 /* Footer 2-Column Layout Override for Home Page */
 @media (min-width: 1201px) {
   .footer-main-columns {
-    grid-template-columns: 1.2fr 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
   }
 }
 
