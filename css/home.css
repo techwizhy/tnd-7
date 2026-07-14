@@ -275,6 +275,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.97rem;
   line-height: 1.72;
+  font-weight: 700; /* Made fully bold as requested */
   color: var(--c-text, #1A1A1A); /* Theme adaptive text color (light teal-grey in dark mode, dark slate in light mode) */
   opacity: 0;
   transform: translateY(20px);
@@ -323,7 +324,7 @@ body {
   font-style: italic;
   font-size: 1.35rem; /* Slightly reduced font-size to fit layout */
   line-height: 1.5;
-  color: #C89B3C; /* Institutional Gold color matching original image */
+  color: var(--c-text, #1A1A1A); /* Normal theme text color matching above paragraphs */
   border-left: 3px solid #C89B3C;
   padding-left: 1.5rem;
   margin-top: 0;
