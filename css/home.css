@@ -1481,6 +1481,11 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
+  
+  .footer-flag-card {
+    grid-column: span 2;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1570,23 +1575,32 @@ body {
     height: 440px;
   }
   
-  .footer-main-columns {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-flag-card {
-    justify-content: center;
-  }
-  
-  .footer-flag-card-inner {
-    max-width: 360px;
-  }
-  
-  
+
   .footer-bottom {
     flex-direction: column;
     gap: 15px;
     text-align: center;
+  }
+  
+  .footer-main-columns {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .footer-col-journey, .footer-flag-card {
+    justify-content: center;
+  }
+  
+  .footer-flag-card {
+    grid-column: auto;
+  }
+  
+  .footer-contact-list {
+    align-items: center;
+  }
+  
+  .footer-socials {
+    justify-content: center;
   }
 }
 
@@ -2426,12 +2440,7 @@ body {
   }
 }
 
-/* Footer 2-Column Layout Override for Home Page */
-@media (min-width: 1201px) {
-  .footer-main-columns {
-    grid-template-columns: 1fr 1fr !important;
-  }
-}
+
 
 /* Coming Soon Modules Banner styling */
 .coming-soon-module-box {
