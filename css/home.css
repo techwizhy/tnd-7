@@ -198,7 +198,8 @@ body {
   font-size: clamp(1.8rem, 3.5vw, 2.8rem); /* Increased size for a bolder, more prominent title prefix */
   font-weight: 500;
   font-style: normal; /* Changed from italic to normal as requested */
-  color: #5C6B89; /* Muted Blue Grey */
+  font-family: 'Empirez-Regular', 'Empirez', sans-serif; /* Applied custom font Empirez-Regular */
+  color: var(--c-sub, #5C6B89); /* Theme adaptive subhead color (light grey in dark mode, slate in light mode) */
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -230,15 +231,16 @@ body {
 }
 
 .h1-main {
-  font-size: clamp(2.6rem, 4.8vw, 4.8rem);
+  font-size: clamp(2.4rem, 4.2vw, 4.2rem); /* Reduced slightly to prevent the trailing question mark from overlapping the video frame */
   font-weight: 700;
+  font-family: var(--f-display); /* Set to custom display font Empirez (Bold) */
   white-space: nowrap;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.9s var(--ease) 0.18s, transform 0.9s var(--ease) 0.18s;
   
-  /* Continuous brand text gradient (Deep Green to Gold) */
-  background: linear-gradient(90deg, #0F3A34 0%, #C89B3C 100%);
+  /* Continuous brand text gradient (Deep Green to Gold) using background-image to avoid resetting clip properties */
+  background-image: linear-gradient(90deg, #0F3A34 0%, #C89B3C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -258,7 +260,7 @@ body {
 
 /* Dark mode adjustment for high contrast: Mint Green to Bright Gold gradient */
 .dark-theme .h1-main {
-  background: linear-gradient(90deg, #1db87a 0%, #ffe066 100%);
+  background-image: linear-gradient(90deg, #1db87a 0%, #ffe066 100%);
 }
 
 .hero-body {
@@ -273,7 +275,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.97rem;
   line-height: 1.72;
-  color: #1A1A1A; /* Dark Slate */
+  color: var(--c-text, #1A1A1A); /* Theme adaptive text color (light teal-grey in dark mode, dark slate in light mode) */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
@@ -1049,8 +1051,8 @@ body {
 
 .what-card:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(15, 58, 52, 0.08), 0 0 45px rgba(212, 164, 55, 0.35);
-  border-color: rgba(212, 164, 55, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 168, 181, 0.08), 0 0 45px rgba(0, 168, 181, 0.25);
+  border-color: rgba(0, 168, 181, 0.35);
 }
 
 .what-card-top {
