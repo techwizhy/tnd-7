@@ -324,7 +324,7 @@ body {
   font-style: italic;
   font-size: 1.35rem; /* Slightly reduced font-size to fit layout */
   line-height: 1.5;
-  color: var(--c-text, #1A1A1A); /* Normal theme text color matching above paragraphs */
+  color: #C89B3C; /* Reverted to original Institutional Gold */
   border-left: 3px solid #C89B3C;
   padding-left: 1.5rem;
   margin-top: 0;
