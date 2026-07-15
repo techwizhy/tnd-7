@@ -86,14 +86,10 @@
 .logo-circle {
   width: 64px;
   height: 64px;
-  background-color: #0F3A34; /* Keep consistent dark green background across themes */
-  border-radius: 50%;
+  background-color: transparent; /* Transparent background to allow the transparent logo to sit naturally on the navbar */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--gold-light);
-  box-shadow: 0 4px 10px rgba(15, 58, 52, 0.2);
-  overflow: hidden;
 }
 
 .logo-circle svg {
@@ -102,7 +98,7 @@
 }
 
 .logo-circle img {
-  transform: scale(1.0); /* Avoid cropping the outer gold border circle and details */
+  transform: none; /* No scaling required as background is transparent and won't crop */
 }
 
 .nav-links {
