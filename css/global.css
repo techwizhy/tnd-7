@@ -1,5 +1,5 @@
 /* Redesigned Stylesheet matching home_page.png visual layout */
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+/* Consolidating and preloading fonts via HTML link tag for better performance */
 
 :root {
   /* Theme Color Palette */

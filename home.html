@@ -4,6 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="The New Democracy is a citizen-first movement empowering individuals to build an inclusive, ethical, and progressive India.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="The New Democracy">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://techwizhy.github.io/tnd-7/home.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techwizhy.github.io/tnd-7/home.html">
+  <meta property="og:title" content="The New Democracy | Together, We Build For Generations">
+  <meta property="og:description" content="The New Democracy is a citizen-first movement empowering individuals to build an inclusive, ethical, and progressive India.">
+  <meta property="og:image" content="https://techwizhy.github.io/tnd-7/images/new_flag-840w.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://techwizhy.github.io/tnd-7/home.html">
+  <meta property="twitter:title" content="The New Democracy | Together, We Build For Generations">
+  <meta property="twitter:description" content="The New Democracy is a citizen-first movement empowering individuals to build an inclusive, ethical, and progressive India.">
+  <meta property="twitter:image" content="https://techwizhy.github.io/tnd-7/images/new_flag-840w.jpg">
+
+  <!-- JSON-LD Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The New Democracy",
+    "alternateName": "TND",
+    "url": "https://techwizhy.github.io/tnd-7/home.html",
+    "logo": "https://techwizhy.github.io/tnd-7/images/logo-128w.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-12345-67890",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.facebook.com/TheNewDemocracy",
+      "https://twitter.com/TheNewDemocracy",
+      "https://www.instagram.com/TheNewDemocracy"
+    ]
+  }
+  </script>
+
   <title>The New Democracy | Together, We Build For Generations</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   
@@ -16,7 +58,9 @@
   <!-- Google Fonts: Fraunces, DM Sans, Cormorant Garamond, Syne -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,300..700;1,300..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://assets.mixkit.co">
+  <link rel="dns-prefetch" href="https://assets.mixkit.co">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,wght@0,300..700;1,300..700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,7 +85,11 @@
   <nav class="navbar" id="navbar">
     <div class="nav-logo-container">
       <div class="logo-circle">
-        <img src="refer/Logo_new_output1.png" alt="TND Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        <picture>
+          <source type="image/avif" srcset="images/logo-48w.avif 48w, images/logo-64w.avif 64w, images/logo-128w.avif 128w" sizes="(max-width: 768px) 48px, 64px">
+          <source type="image/webp" srcset="images/logo-48w.webp 48w, images/logo-64w.webp 64w, images/logo-128w.webp 128w" sizes="(max-width: 768px) 48px, 64px">
+          <img src="images/logo-64w.png" alt="TND Logo" width="64" height="64" decoding="async" style="width: 100%; height: 100%; object-fit: contain;">
+        </picture>
       </div>
       <span>THE NEW DEMOCRACY</span>
     </div>
@@ -141,7 +189,7 @@
 
             <!-- Video Wrapper to constrain layout -->
             <div class="video-wrapper">
-              <video id="heroVideo" autoplay loop muted playsinline poster="refer/hero_section_image.png">
+              <video id="heroVideo" autoplay loop muted playsinline poster="images/hero_poster-1200w.jpg">
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-parliament-building-in-aerial-view-12095-large.mp4" type="video/mp4">
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-network-connection-lines-and-dots-background-40546-large.mp4" type="video/mp4">
               </video>
@@ -194,7 +242,7 @@
             <div class="accordion-slider-container">
                 
                 <!-- Session 1 -->
-                <div class="accordion-panel active" id="panel-session1" data-session="1">
+                <div class="accordion-panel active" id="panel-session1" data-session="1" tabindex="0" role="button" aria-expanded="true">
                     <!-- Collapsed State -->
                     <div class="panel-collapsed">
                         <div class="panel-collapsed-content">
@@ -240,7 +288,7 @@
                 </div>
 
                 <!-- Session 2 -->
-                <div class="accordion-panel" id="panel-session2" data-session="2">
+                <div class="accordion-panel" id="panel-session2" data-session="2" tabindex="0" role="button" aria-expanded="false">
                     <!-- Collapsed State -->
                     <div class="panel-collapsed">
                         <div class="panel-collapsed-content">
@@ -284,7 +332,7 @@
                 </div>
 
                 <!-- Session 3 -->
-                <div class="accordion-panel" id="panel-session3" data-session="3">
+                <div class="accordion-panel" id="panel-session3" data-session="3" tabindex="0" role="button" aria-expanded="false">
                     <!-- Collapsed State -->
                     <div class="panel-collapsed">
                         <div class="panel-collapsed-content">
@@ -328,7 +376,7 @@
                 </div>
 
                 <!-- Session 4 -->
-                <div class="accordion-panel" id="panel-session4" data-session="4">
+                <div class="accordion-panel" id="panel-session4" data-session="4" tabindex="0" role="button" aria-expanded="false">
                     <!-- Collapsed State -->
                     <div class="panel-collapsed">
                         <div class="panel-collapsed-content">
@@ -404,7 +452,7 @@
                 </div>
 
                 <!-- Session 5 -->
-                <div class="accordion-panel" id="panel-session5" data-session="5">
+                <div class="accordion-panel" id="panel-session5" data-session="5" tabindex="0" role="button" aria-expanded="false">
                     <!-- Collapsed State -->
                     <div class="panel-collapsed">
                         <div class="panel-collapsed-content">
@@ -652,7 +700,11 @@
         <div class="founder-card glass-card founder-3d-card">
           <div class="founder-avatar-wrapper">
             <div class="founder-avatar-ring"></div>
-            <img class="founder-avatar" src="refer/mentor_1.png" alt="Mohan Babu portrait">
+            <picture>
+              <source type="image/avif" srcset="images/mentor_1-180w.avif 180w, images/mentor_1-360w.avif 360w" sizes="180px">
+              <source type="image/webp" srcset="images/mentor_1-180w.webp 180w, images/mentor_1-360w.webp 360w" sizes="180px">
+              <img class="founder-avatar" src="images/mentor_1-180w.png" alt="Mohan Babu portrait" width="180" height="180" decoding="async" loading="lazy">
+            </picture>
           </div>
           <div class="founder-info">
             <h3>Mohan Babu</h3>
@@ -665,7 +717,11 @@
         <div class="founder-card glass-card founder-3d-card">
           <div class="founder-avatar-wrapper">
             <div class="founder-avatar-ring" style="animation-direction: reverse; animation-duration: 35s;"></div>
-            <img class="founder-avatar" src="refer/mentor_2.png" alt="Arjun portrait">
+            <picture>
+              <source type="image/avif" srcset="images/mentor_2-180w.avif 180w, images/mentor_2-360w.avif 360w" sizes="180px">
+              <source type="image/webp" srcset="images/mentor_2-180w.webp 180w, images/mentor_2-360w.webp 360w" sizes="180px">
+              <img class="founder-avatar" src="images/mentor_2-180w.png" alt="Arjun portrait" width="180" height="180" decoding="async" loading="lazy">
+            </picture>
           </div>
           <div class="founder-info">
             <h3>Arjun</h3>
@@ -723,7 +779,7 @@
               </g>
             </svg>
           </div>
-          <h2 style="position: relative; z-index: 1; margin: 0 0 20px 0; font-family: 'DM Sans', sans-serif; font-weight: 700; line-height: 1.3; font-size: 1.6rem; color: #FAF8F5;">To Start your Political Journey</h2>
+          <h2 style="position: relative; z-index: 1; margin: 0 0 20px 0; font-family: 'DM Sans', sans-serif; font-weight: 700; line-height: 1.3; font-size: 1.6rem; color: #FAF8F5;">To Begin your Political Journey</h2>
           <a href="#programme" class="btn-pill btn-pill-gold" style="position: relative; z-index: 1; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; justify-content: center; width: 100%; box-sizing: border-box;">REGISTER NOW <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
@@ -731,7 +787,11 @@
       <!-- Column 2: Flag Image Card -->
       <div class="footer-flag-card">
         <div class="footer-flag-card-inner">
-          <img src="refer/new_flag.webp" alt="The New Democracy Flag" class="footer-flag-img" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="images/new_flag-320w.avif 320w, images/new_flag-420w.avif 420w, images/new_flag-840w.avif 840w" sizes="(max-width: 768px) 320px, 420px">
+            <source type="image/webp" srcset="images/new_flag-320w.webp 320w, images/new_flag-420w.webp 420w, images/new_flag-840w.webp 840w" sizes="(max-width: 768px) 320px, 420px">
+            <img src="images/new_flag-420w.jpg" alt="The New Democracy Flag" class="footer-flag-img" width="420" height="315" decoding="async" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </picture>
         </div>
       </div>
 
@@ -820,9 +880,9 @@
 
   <!-- Interactive Scripts -->
   <!-- Three.js + GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/home.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/home.js" defer></script>
 </body>
 </html>

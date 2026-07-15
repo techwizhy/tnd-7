@@ -165,7 +165,7 @@
 
 /* Footer Section */
 .footer-wrapper {
-  background-color: #040d0e;
+  background: linear-gradient(90deg, #152331 0%, #000000 100%);
   color: #FAF8F5;
   padding: 80px 5% 30px;
   position: relative;

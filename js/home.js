@@ -91,7 +91,10 @@ function initSessionsAccordion() {
 
   // Mobile check: start with all closed
   if (window.innerWidth < 992) {
-    accordionPanels.forEach(panel => panel.classList.remove('active'));
+    accordionPanels.forEach(panel => {
+      panel.classList.remove('active');
+      panel.setAttribute('aria-expanded', 'false');
+    });
     activeIndex = -1;
   }
 
@@ -103,8 +106,10 @@ function initSessionsAccordion() {
     accordionPanels.forEach((panel, idx) => {
       if (idx === index) {
         panel.classList.add('active');
+        panel.setAttribute('aria-expanded', 'true');
       } else {
         panel.classList.remove('active');
+        panel.setAttribute('aria-expanded', 'false');
       }
     });
   };
@@ -128,7 +133,7 @@ function initSessionsAccordion() {
     }
   };
 
-  // Panel hover/click logic
+  // Panel hover/click/keyboard logic
   accordionPanels.forEach((panel, idx) => {
     // Hover to expand on desktop
     panel.addEventListener('mouseenter', () => {
@@ -144,6 +149,7 @@ function initSessionsAccordion() {
         // Toggle behavior on mobile: close if already open, open and close others if closed
         if (panel.classList.contains('active')) {
           panel.classList.remove('active');
+          panel.setAttribute('aria-expanded', 'false');
           activeIndex = -1;
         } else {
           setActivePanel(idx);
@@ -164,6 +170,14 @@ function initSessionsAccordion() {
       } else {
         setActivePanel(idx);
         startAutoplay(); // Reset timer and resume
+      }
+    });
+
+    // Keyboard navigation (Enter / Space)
+    panel.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        panel.click();
       }
     });
   });

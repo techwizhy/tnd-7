@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techwizhy.github.io/tnd-7/sitemap.xml
